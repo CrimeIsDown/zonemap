@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Address to CPD Radio Zone Lookup</title>
+  <meta name="author" content="Eric Tendian" />
+  <meta name="description" content="Looks up the corresponding CPD district and radio zone given an address." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Bootstrap -->
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+
+<body onload="initialize()">
+  <div class="container">
+    <h2>Address to CPD Radio Zone Lookup</h2>
+    <p>Use the map below to determine what district, and therefore radio zone, an address/location is in. The colored areas represent polce districts, where all districts in a zone are one color. Enter an address, intersection, or landmark (anything accepted by Google Maps) in the search field below to determine what radio zone you should tune to listen for info on the crime.</p>
+
+    <div class="col-md-6">
+      <form action="#" onsubmit="showAddress(this.address.value); return false">
+        <p>
+          <input type="text" size="50" name="address" placeholder="63rd and Halsted, Chicago" style="width: 87%" />
+          <input type="submit" value="Search" />
+        </p>
+        <div id="map_canvas" style="height: 400px;"></div>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <p style="border-bottom:1px solid #000;"><strong>CPD Radio Dispatch Zones</strong></p>
+      <ol id="map-key">
+        <li>460.475MHz - Districts 16, 17</li>
+        <li>460.050MHz - District 19</li>
+        <li>460.225MHz - Districts 12, 14</li>
+        <li>460.150MHz - Districts 1, 18</li>
+        <li>460.500MHz - District 2, CPD HQ</li>
+        <li>460.400MHz - Districts 7, 8</li>
+        <li>460.075MHz - Districts 3</li>
+        <li>460.200MHz - Districts 4, 6</li>
+        <li>460.025MHz - Districts 5, 22</li>
+        <li>460.100MHz - Districts 10, 11</li>
+        <li>460.375MHz - Districts 20, 24</li>
+        <li>460.425MHz - Districts 15, 25</li>
+        <li>460.450MHz - District 9</li>
+      </ol>
+      <hr>
+      <em>Brought to you by <a href="http://tendian.io" target="_blank">Eric Tendian</a> and <a href="https://twitter.com/EricTendian/lists/crimeisdown" target="_blank">#CrimeIsDown</a>
+    </div>
+
+  </div>
+
+  <a href="https://github.com/EricTendian/zonemap"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <script src="js/geoxml3.js"></script>
+  <script src="js/v3_epoly.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
